@@ -1,0 +1,86 @@
+body {
+    background-color: #ffffff;
+    color: #474747;
+    padding-top: 3rem;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic,sans-serif;
+}
+
+h2, h3 {
+    font-family: 'Cinzel', serif;
+    font-variant: small-caps;
+}
+
+#head-name {
+    color: #1f529d;
+    font-size: 2.5rem;
+}
+
+.home-head2 {
+    color: #1f529d;
+    font-size: 1.25em;
+}
+
+.winners {
+    color: #474747;
+    padding-top: 30px;
+    font-size: 2rem;
+}
+
+.add-winner {
+    color: #474747;
+    padding-top: 60px;
+    font-size: 2rem;
+}
+
+hr {
+    /* padding-bottom: 30px; */
+    border: solid 1px #474747;
+    margin-bottom: 30px;
+}
+
+.submit {
+    background-color: #474747;
+    border-color: #474747;
+    margin-top: 10px;
+
+}
+
+.results {
+    background-color: #1f529d;
+    border-color: #1f529d;
+    margin-top: 40px;
+}
+
+.results:hover {
+    background-color: #474747;
+    border-color: #474747;
+}
+
+.warning {
+    color: red;
+    font-size: 20px;
+}
+
+.sub-desc {
+    margin-bottom: 0;
+}
+
+.delete {
+    margin-bottom: 30px;
+}
+
+.navbar {
+    background-color: #474747;
+}
+
+.logout {
+    color: #ffffff;
+}
+.container {
+    margin-top: 3rem;
+}
+
+ 
+  
+  
+  

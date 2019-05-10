@@ -1,0 +1,31 @@
+body {
+    background-color: #ffffff;
+    color: #474747;
+    padding-top: 3rem;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic,sans-serif;
+}
+
+.navbar {
+    background-color: #474747;
+}
+
+.logout {
+    color: #ffffff;
+}
+.container {
+    margin-top: 3rem;
+}
+
+h1 {
+    color: #1f529d;
+    font-family: 'Cinzel', serif;
+    font-variant: small-caps;
+}
+
+th {
+    color: #1f529d;
+}
+
+.head2 {
+    margin-top: 100px;
+}

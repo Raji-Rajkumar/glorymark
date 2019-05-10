@@ -1,0 +1,91 @@
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #474747;
+    color: #474747;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic,sans-serif;
+  }
+  
+  .h1, h1 {
+    font-size: 3rem;
+    color: #1C509B;
+    font-family: 'Cinzel', serif;
+    font-variant: small-caps;
+  }
+  .h4, h4 {
+    font-size: 2rem;
+    font-family: 'Cinzel', serif;
+    font-variant: small-caps;
+  }
+  
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    margin: auto;
+    background-color: #ffffff;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  
+  .form-control:focus {
+    border-color: #1C509B;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(28, 80, 155, 0.7);
+  }
+  
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .btn-primary {
+    background-color: #474747;
+    border-color: #474747;
+  }
+
+  .btn:hover {
+    background-color: #1C509B;
+    border-color: #1C509B;
+  
+  }
+  
+  a {
+    color: #1C509B;
+  }
+  
+  a:hover {
+    color: #1C509B;
+    font-weight:bold;
+    text-decoration: none;
+  
+  }
+  
+  
