@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <title>GloryMark · Select Winner </title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- font page -->
+        <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/assets/css/select-winner.css" rel="stylesheet">
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+                <a class="navbar-brand disabled" href='#'>GloryMark</a>
+                
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <a class="nav-item nav-link logout" href="/log-out">Log Out</a>
+                    </form>
+                </div> <!-- collapse navbar-collapse end -->
+            </nav>
+
+        <main class="container">
+        <div class="content-section">
+                <h2 id="head-name">Select Winners</h2>
+                <h3 class="winners">Winners</h3>
+                <hr>
+                <%if(winners.length == 0) {%>
+                    <p> You Have Not Selected Any Winners</p>
+                <% } else {%>
+                        <div class="row text-center">
+                            <% for(var i = 0; i < winners.length; i++) { %>
+                                <div class="col-md-4">
+                                    <h4 class="home-head2"><%= winners[i].eventName%></h4>
+                                    <p class="sub-desc">Contestant Name: <%= winners[i].fullname%></p>
+                                    <p class="sub-desc">Type of win: <%= winners[i].winType%></p>
+                                    <form class="delete" method="POST" action="/delete-winner"> 
+                                        <label for="deleteWinnerId" class="sr-only">w_id</label>
+                                        <input type="hidden" name="w_id" value="<%=winners[i].w_id%>">
+                                        <button class="btn btn-secondary submit">Delete Winner</button>
+                                    </form>
+                                    
+                                </div>
+                            <% } %>
+                        </div>
+                <% } %>
+    
+                <h3 class="add-winner">Add Winner</h3>
+                <hr>
+                <form method="POST" action="/select-winner">
+                    <div class="form-group"> 
+                            <label class="sr-only" for="chooseEvent">Select Event</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="event">
+                                <option selected><p class="opt-title">Select Event</p></option>
+                                <% for(var i = 0; i < events.length; i++) { %>
+                                    
+                                    <option value='<%=events[i].e_id%>'><%= events[i].eventName%></option>
+                                    
+                                <% } %>
+                            </select>
+                            <label class="sr-only" for="chooseContestant">Select Contestant</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="contestant">
+                                <option selected><p class="opt-title">Select Contestant</p></option>
+                                <% for(var i = 0; i < contestants.length; i++) { %>
+                                    
+                                    <option value='<%=contestants[i].c_id%>'><%= contestants[i].fullname%></option>
+                                    
+                                <% } %>
+                            </select>
+                        
+                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="winType">
+                                <option selected><p class="opt-title">Select Type of Win</p></option>
+                                <option value=1>Contestant won</option>
+                                <option value=2>Contestant placed</option>
+                        </select>
+                        
+                        <button class="btn btn-primary btn-large submit" type="submit">Submit</button>
+                    </div>
+                    
+
+                    <a class="btn btn-secondary btn-block results" href="/results">View Results</a>
+                    <p class="warning text-center"><strong>Only select the view results button after you have picked ALL of your winners</strong></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    </body>
+</html>

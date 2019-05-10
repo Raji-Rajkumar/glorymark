@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <title>GloryMark · Admin Manage Bets </title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- font page -->
+        <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/assets/css/admin-manage-bet.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand disabled" href='#'>GloryMark</a>
+            
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/admin">Events</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="nav-item nav-link logout" href="/log-out">Log Out</a>
+                </form>
+            </div> <!-- collapse navbar-collapse end -->
+        </nav>
+
+        <main role="main" class="container text-center">
+                <div class="starter-template">
+                    <h1><%= title%></h1>
+                </div>
+                <h2 class="bhead">Bets</h2>
+            
+            <% if(betInfo.length == 0) {%>
+                <p> You have no bets</p>
+            <% } else { %>
+                <div class="row text-center">
+                    <% for(var i = 0; i < betInfo.length; i++) { %>
+                        <div class="col-md-4">
+                            <h4 class="home-head2"><%= betInfo[i].u_fullname%></h4>
+                            <p class="sub-desc">Contestants: <%= betInfo[i].c_fullname%></p>
+                            <p class="sub-desc">Amount Bet: $<%= betInfo[i].betAmount%></p>
+                            <p class="sub-desc-end">Type of Bet: <%= betInfo[i].betType%></p>
+                            <form method="POST" action="/admin-delete-bet">
+                                <label for="deleteBetId" class="sr-only">bet_id</label>
+                                <input type="hidden" name="bet_id" value="<%=betInfo[i].bet_id%>">
+                                <button class="btn btn-secondary">Delete Bet</button>
+                            </form>
+                            
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+               
+        </main>
+
+    </body>
+</html>

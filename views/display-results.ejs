@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <title>GloryMark · Display Results </title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- font page -->
+        <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/assets/css/display-results.css" rel="stylesheet">
+    </head>
+
+    <body>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+                <a class="navbar-brand disabled" href='#'>GloryMark</a>
+                
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <a class="nav-item nav-link logout" href="/log-out">Log Out</a>
+                    </form>
+                </div> <!-- collapse navbar-collapse end -->
+            </nav>
+            <main class="container text-center">
+                <h1 class="text-center">Results</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Event</th>
+                            <th scope="col">Better</th>
+                            <th scope="col">Contestant</th>
+                            <th scope="col">Amount Bet</th>
+                            <th scope="col">Type of Bet</th>
+                            <th scope="col">Amount Won</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                            <% for(var i = 0; i < results.length; i++) { %>
+                                <tr>
+                                <td><%=results[i].event_name%></td>
+                                <td><%=results[i].better_name%></td>
+                                <td><%=results[i].contestant_name%></td>
+                                <td>$<%=results[i].betAmount%></td>
+                                <td><%=results[i].bet_type%></td>
+                                <td>$<%=results[i].winningMinusCut%></td>
+                            </tr>
+                            <% } %>
+                        
+                    </tbody>
+                </table>
+                <h1 class="text-center head2">Total Per Better</h1>
+                <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Better Name</th>
+                                <th scope="col">Total Amount Won</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <% for(var i = 0; i < totalPerBetter.length; i++) { %>
+                                <tr>
+                                <td><%=totalPerBetter[i].better_name%></td>
+                                <td>$<%=totalPerBetter[i].sum%></td>
+                            </tr>
+                            <% } %>
+                            
+                        </tbody>
+                    </table>
+                    <h1>Amount For Charity: $<%=amountToCharity[0].sum%></h1>
+            </main>
+    </body>
+</html>

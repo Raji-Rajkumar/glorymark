@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <title>GloryMark · Profile</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- font page -->
+        <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/assets/css/profile.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand disabled" href='#'>GloryMark</a>
+            
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events">Events</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="nav-item nav-link logout" href="/log-out">Log Out</a>
+                </form>
+            </div> <!-- collapse navbar-collapse end -->
+        </nav>
+
+        <main role="main" class="container">
+            <div class="starter-template">
+                <h1><%= name%></h1>
+            </div>
+            <div class="starter-template bets">
+                
+                <% if (count == 0) { %>
+                    <h2 class="bhead">Bets</h2>
+                    <div class="no-bets">
+                        <p>You currently have no bets.</p>
+                        <p><a class="btn btn-secondary" href="events" role="button">Go To Events</a></p>
+                    </div> 
+                <% } else {%>
+                    <h2 class="bhead2 text-center">Bets</h2>
+                    <div class="row text-center">
+                        <% for(var i = 0; i < betInfo.length; i++) { %>
+                            <div class="col-md-4">
+                                <h4 class="home-head2"><%= betInfo[i].eventName%></h4>
+                                <p class="sub-desc">Contestant Name: <%= betInfo[i].fullname%></p>
+                                <p class="sub-desc">Amount Bet: $<%= betInfo[i].betAmount%></p>
+                                <p class="sub-desc-end">Type of Bet: <%= betInfo[i].betType%></p>
+                            </div>
+                        <% } %>
+                    </div>
+                    <p class="text-center"><a class="btn btn-secondary btn-block" href="events" role="button">Go To Events</a></p>
+                
+                <% } %>   
+                
+            </div> <!-- starter-template bets end -->
+        </main>
+
+    </body>
+
+</html>
+

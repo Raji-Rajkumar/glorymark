@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>GloryMark · Sign in</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/css/sign-in.css" rel="stylesheet">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+  </head>
+
+
+  <body class="text-center">
+    <form method="POST" action="/sign-in" class="form-signin rounded">
+      <h1 class="h1 mb-3 font-weight-normal">GloryMark</h1>
+      <h4 class="h4 mb-3 font-weight-normal">Please sign in</h4>
+
+      <% if (failureFlash != '') { %>
+        <div class="alert alert-danger"><%= failureFlash%></div>
+        <br>
+    <% } %>
+
+      <label for="inputUsername" class="sr-only">Username</label>
+      <input type="text" name="username" class="form-control" placeholder="username" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name="pword" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <p>Are you a new user? <a href='sign-up'>Sign up now!</a></p>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+</body>
+</html>

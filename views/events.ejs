@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.5">
+        <title>GloryMark · Events</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- font page -->
+        <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/assets/css/events.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+                <a class="navbar-brand disabled" href='#'>GloryMark</a>
+                
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile">Profile</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="events">Events</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <a class="nav-item nav-link logout" href="/log-out">Log Out</a>
+                    </form>
+                </div> <!-- collapse navbar-collapse end -->
+
+            </nav>
+
+            <main role="main" class="container">
+                    <div class="starter-template">
+                            <h1>Events</h1>
+                    </div> <!-- starter-template end -->
+                    <div class="row">
+                        <% for(var i = 0; i < events.length; i++) { %>
+                            <div class="col-md-4">
+                                <h2 class="home-head"><%= events[i].eventName%></h2>
+                                <p class="sub-desc"><%= events[i].eventDesc%></p>
+                                <%if(events[i].isDisabled == 'F') {%>
+                                    <p><a class="btn btn-secondary" href='/<%= events[i].href%>' role="button">Place Bet</a></p>
+                                <% } else {%>
+                                    <p><a class="btn btn-secondary disabled" href='#' role="button">Admin has disabled event</a></p>
+                                <% } %>
+                            </div> 
+                        <% } %>
+                    </div> 
+            </main>
+    </body>
